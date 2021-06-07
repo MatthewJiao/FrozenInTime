@@ -26,6 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Icon from 'react-native-vector-icons/dist/FontAwesome'
+
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -71,7 +73,7 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
+            Edit <Icon name="home" size = {20}/> <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
