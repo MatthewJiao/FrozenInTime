@@ -5,11 +5,12 @@ import {
   StatusBar,
   
 } from 'react-native';
-
+ 
 
 
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import HomeScreen from './src/screens/Home'
+import Post from './src/components/Post'
 
 
 const App: () => Node = () => {
@@ -18,7 +19,7 @@ const App: () => Node = () => {
 
   return (
     <SafeAreaView >
-     <HomeScreen/> 
+     <Post/> 
     </SafeAreaView>
   );
 };
