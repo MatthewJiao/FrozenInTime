@@ -20,6 +20,9 @@ const App: () => Node = () => {
   return (
     <SafeAreaView >
      <Post/> 
+     <Post/> 
+     <Post/> 
+
     </SafeAreaView>
   );
 };
