@@ -11,6 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import HomeScreen from './src/screens/Home'
 import Post from './src/components/Post'
+import SearchResultScreen from './src/screens/SearchResults'
 
 import feed from './assets/data/feed'
 
@@ -23,8 +24,8 @@ const App: () => Node = () => {
 
   return (
     <SafeAreaView >
-     <Post post = {post2}/> 
-     
+     {/*<Post post = {post2}/> */}
+     <SearchResultScreen/>
 
     </SafeAreaView>
   );
