@@ -1,12 +1,11 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
-  SafeAreaView,
   StatusBar,
   
 } from 'react-native';
 import 'react-native-gesture-handler'
- 
+ import Router from './src/navigtion/Router'
 
 
 import HomeScreen from './src/screens/Home'
@@ -17,11 +16,10 @@ const App: () => Node = () => {
   
 
   return (
-    <SafeAreaView >
-     {/*<Post post = {post2}/> */}
-     {/*<SearchResultScreen/>*/}
-     <HomeScreen/>
-    </SafeAreaView>
+      <>
+        <StatusBar barStyle = "dark-content"/>
+        <Router/>
+      </>
   );
 };
 
