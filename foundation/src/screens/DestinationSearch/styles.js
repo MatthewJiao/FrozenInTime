@@ -5,10 +5,14 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     textInput: {
-        fontSize: 20
+        fontSize: 20,
+        marginBottom: 20
     },
     iconContainer: {
-
+        backgroundColor: '#e7e7e7',
+        padding: 7,
+        borderRadius: 10,
+        marginRight: 10
     },
     row: {
         flexDirection: 'row',
