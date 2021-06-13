@@ -4,8 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import DestinationSearchScreen from '../screens/DestinationSearch'
 import GuestsScreen from '../screens/Guests'
+import SearchResults from '../screens/SearchResults'
 
 import HomeTabNavigator from './HomeTabNavigator';
+import SearchResultScreen from '../screens/SearchResults';
 
 const Stack = createStackNavigator()
 
@@ -36,6 +38,7 @@ const Router = (props) => {
                         title: "How many people?"
                     }}
                 />
+                
             </Stack.Navigator>
         </NavigationContainer>
     )
