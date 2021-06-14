@@ -10,49 +10,38 @@ import searchResults from '../../../assets/data/search'
 import { useNavigation } from '@react-navigation/native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
+
 import Env from '../../../environment'
+
+import SuggestionRow from './SuggestionRow.js';
 
 
 const DestinationSearchScreen = (props) => {
-    const [inputText, setInputText] = useState('')
     const navigation = useNavigation()
 
     return (
         <View style = {styles.container}>
 
-            <View style = {{height: 500}}>
-                <GooglePlacesAutocomplete
-                    placeholder='Search'
-                    onPress={(data, details = null) => {
-                        // 'details' is provided when fetchDetails = true
-                        console.log(data, details);
-                    }}
-                    query={{
-                        key: 'put key here',
-                        language: 'en',
-                    }}
-                />
-            </View>
-            <TextInput
-                style = {styles.textInput}
-                placeholder = "where are you going?"
-                value = {inputText}
-                onChange={setInputText}
-            />
-
-            <FlatList
-                data = {searchResults}
-                renderItem = {({item}) => {
-                    return (
-                        <Pressable onPress = {() => navigation.navigate('Guests')} style = {styles.row}>
-                            <View style = {styles.iconContainer}>
-                                <Entypo name = {"location-pin"} size = {30}/>
-                            </View>
-                            <Text style = {styles.locationText}>{item.description}</Text>
-                        </Pressable>
-                    )
+            <GooglePlacesAutocomplete
+                placeholder='Where are you going?'
+                onPress={(data, details = null) => {
+                    // 'details' is provided when fetchDetails = true
+                    console.log(data, details);
+                    navigation.navigate('Guests')
                 }}
+                fetchDetails
+                styles = {
+                    styles.textInput
+
+                }
+                query={{
+                    key: 'Env.GOOGLE_PLACES_API_KEY',
+                    language: 'en'
+                }}
+                suppressDefaultStyles
+                renderRow = {(item) => <SuggestionRow item = {item}/>}
             />
+                    
         </View>
     )
 
