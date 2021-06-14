@@ -8,6 +8,9 @@ import styles from './styles.js'
 import searchResults from '../../../assets/data/search'
 
 import { useNavigation } from '@react-navigation/native';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+
+import Env from '../../../environment'
 
 
 const DestinationSearchScreen = (props) => {
@@ -16,6 +19,20 @@ const DestinationSearchScreen = (props) => {
 
     return (
         <View style = {styles.container}>
+
+            <View style = {{height: 500}}>
+                <GooglePlacesAutocomplete
+                    placeholder='Search'
+                    onPress={(data, details = null) => {
+                        // 'details' is provided when fetchDetails = true
+                        console.log(data, details);
+                    }}
+                    query={{
+                        key: 'put key here',
+                        language: 'en',
+                    }}
+                />
+            </View>
             <TextInput
                 style = {styles.textInput}
                 placeholder = "where are you going?"
