@@ -35,7 +35,7 @@ const DestinationSearchScreen = (props) => {
 
                 }
                 query={{
-                    key: 'Env.GOOGLE_PLACES_API_KEY',
+                    key: Env.GOOGLE_PLACES_API_KEY,
                     language: 'en'
                 }}
                 suppressDefaultStyles
