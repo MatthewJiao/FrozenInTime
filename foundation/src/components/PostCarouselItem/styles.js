@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     innerContainer: {
         flexDirection: 'row',
         backgroundColor: 'white',
-        borderRadius: 10,
+        borderRadius: 15,
         overflow: "hidden"
         
     },
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     prices: {
-        fontSize: 18,
+        fontSize: 15,
         marginVertical: 10
     },
     oldPrice: {
@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
 
     },
     description: {
-        fontSize: 18,
-        lineHeight: 26
+        fontSize: 15,
     }, 
     bedrooms: {
         marginVertical: 10,
