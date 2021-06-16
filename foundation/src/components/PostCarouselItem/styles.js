@@ -3,7 +3,10 @@ import {ImageBackground, ImageBackgroundComponent, StyleSheet} from 'react-nativ
 const styles = StyleSheet.create({
     container: {
         height: 120,
-        padding: 5
+        padding: 5,
+
+    
+    
     },
     innerContainer: {
         flexDirection: 'row',
