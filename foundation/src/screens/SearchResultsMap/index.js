@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, FlatList} from 'react-native';
-import MapView, {Marker} from 'react-native-maps'
+import MapView, {CalloutSubview, Marker} from 'react-native-maps'
 
 import places from '../../../assets/data/feed'
 import CustomMarker from '../../components/CustomMarker/index.';
@@ -11,7 +11,30 @@ import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimen
 
 const SearchResultsMap = (props) => {
     const [selectedPlaceId, setSelectedPlaceId] = useState(null)
+
+    const flatlist = useRef()
+
+    const viewConfig = useRef({itemVisiblePercentThreshold: 70})
+
+    const onViewChanged = useRef(({viewableItems}) => {
+        if (viewableItems.length > 0) {
+            const selectedPlace = viewableItems[0].item
+            setSelectedPlaceId(selectedPlace.id)
+        }
+    })
+
     const width = useWindowDimensions().width
+
+    
+    useEffect(() => {
+        if (!selectedPlaceId || !flatlist) {
+            return
+        }
+        const index = places.findIndex(place => place.id == selectedPlaceId)
+        flatlist.current.scrollToIndex({index})
+        console.log("scroll to ", selectedPlaceId)
+    }, [selectedPlaceId])
+
     return (
         <View style  = {{width: '100%', height: '100%'}}>
              <MapView
@@ -38,6 +61,7 @@ const SearchResultsMap = (props) => {
 
             <View style = {{position: 'absolute', bottom: 10}}>
                 <FlatList 
+                    ref = {flatlist}
                     data = {places}
                     renderItem = {({item}) => <PostCarouselItem post = {item}/> }
                     horizontal
@@ -45,6 +69,8 @@ const SearchResultsMap = (props) => {
                     snapToInterval = {width - 80}
                     snapToAlignment = {"center"}
                     decelerationRate = {"fast"}
+                    viewabilityConfig = {viewConfig.current}
+                    onViewableItemsChanged = {onViewChanged.current}
                 />
             </View>
         </View>
