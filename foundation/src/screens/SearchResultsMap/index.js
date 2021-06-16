@@ -14,6 +14,8 @@ const SearchResultsMap = (props) => {
 
     const flatlist = useRef()
 
+    const map = useRef()
+
     const viewConfig = useRef({itemVisiblePercentThreshold: 70})
 
     const onViewChanged = useRef(({viewableItems}) => {
@@ -33,11 +35,22 @@ const SearchResultsMap = (props) => {
         const index = places.findIndex(place => place.id == selectedPlaceId)
         flatlist.current.scrollToIndex({index})
         console.log("scroll to ", selectedPlaceId)
+
+        const selectedPlace = places[index]
+        const region = {
+            latitude: selectedPlace.coordinate.latitude,
+            longitude: selectedPlace.coordinate.longitude,
+            latitudeDelta: 0.8,
+            longitudeDelta: 0.8
+        }
+
+        map.current.animateToRegion(region)
     }, [selectedPlaceId])
 
     return (
         <View style  = {{width: '100%', height: '100%'}}>
              <MapView
+                ref = {map}
                 style = {{width: '100%', height: '100%'}}
                 initialRegion={{
                 latitude: 28.3279822,
