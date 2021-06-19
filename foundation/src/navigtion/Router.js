@@ -8,6 +8,7 @@ import SearchResults from '../screens/SearchResults'
 
 import HomeTabNavigator from './HomeTabNavigator';
 import SearchResultScreen from '../screens/SearchResults';
+import PostScreen from '../screens/PostScreen';
 
 const Stack = createStackNavigator()
 
@@ -36,6 +37,14 @@ const Router = (props) => {
                     component = {GuestsScreen}
                     options = {{
                         title: "How many people?"
+                    }}
+                />
+
+                <Stack.Screen 
+                    name = {"Post"}
+                    component = {PostScreen}
+                    options = {{
+                        title: "Accommodation"
                     }}
                 />
                 

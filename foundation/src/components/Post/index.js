@@ -3,16 +3,23 @@ import {
   View,
   Text,
   Image,
+  Pressable
 } from 'react-native';
 import styles from './styles.js'
+
+import { useNavigation } from '@react-navigation/native';
 
 
 const Post = (props) => {
   const post = props.post
-  
+   
+  const navigation = useNavigation()
+  const goToPostPage = () => {
+    navigation.navigate('Post', {postId: post.id})
+  }
 
   return (
-    <View style = {styles.container} >
+    <Pressable onPress={goToPostPage} style = {styles.container} >
         
         <Image 
             style = {styles.image}
@@ -36,7 +43,7 @@ const Post = (props) => {
 
 
 
-    </View>
+    </Pressable>
   );
 };
 
