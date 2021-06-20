@@ -16,10 +16,10 @@ const SearchResultsMap = (props) => {
 
     const map = useRef()
 
-    const viewConfig = useRef({itemVisiblePercentThreshold: 70})
+    const viewConfig = useRef({itemVisiblePercentThreshold: 100})
 
     const onViewChanged = useRef(({viewableItems}) => {
-        if (viewableItems.length > 0) {
+        if (viewableItems.length == 1) {
             const selectedPlace = viewableItems[0].item
             setSelectedPlaceId(selectedPlace.id)
         }
