@@ -1,6 +1,6 @@
 {
   "auth": {
-    "foundationc63fb55f": {
+    "foundationb5994d45": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

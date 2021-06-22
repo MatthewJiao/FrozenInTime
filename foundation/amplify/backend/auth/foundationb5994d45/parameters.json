@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "foundationc63fb55f_identitypool_c63fb55f",
+    "identityPoolName": "foundationb5994d45_identitypool_b5994d45",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "foundac63fb55f",
-    "userPoolName": "foundationc63fb55f_userpool_c63fb55f",
+    "resourceNameTruncated": "foundab5994d45",
+    "userPoolName": "foundationb5994d45_userpool_b5994d45",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "foundac63fb55f_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "foundab5994d45_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "c63fb55f",
-    "resourceName": "foundationc63fb55f",
+    "sharedId": "b5994d45",
+    "resourceName": "foundationb5994d45",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -46,9 +46,6 @@
         ]
     },
     "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

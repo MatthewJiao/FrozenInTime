@@ -9,7 +9,6 @@ import 'react-native-gesture-handler'
 
 
 import HomeScreen from './src/screens/Home'
-
 import {withAuthenticator} from 'aws-amplify-react-native'
 
 const App: () => Node = () => {
