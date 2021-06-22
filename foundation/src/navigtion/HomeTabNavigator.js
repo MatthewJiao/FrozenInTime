@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../screens/Home'
+import ProfileScreen from '../screens/Profile'
+
 import ExploreNavigator from './ExploreNavigtor'
 
 import Fontisto from 'react-native-vector-icons/Fontisto'
@@ -58,7 +60,7 @@ const HomeTabNavigator = (props) => {
             />
             <Tab.Screen  
                 name = {"profile"} 
-                component = {HomeScreen}
+                component = {ProfileScreen}
                 options = {{
                     tabBarIcon: ({color}) => (
                         <EvilIcons name="user" size={25} color={color} />
