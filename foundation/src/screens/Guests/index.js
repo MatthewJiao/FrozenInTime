@@ -90,7 +90,10 @@ const GuestsScreen = (props) => {
                 onPress = {() => navigation.navigate('Home', {
                     screen: 'Explore',
                     params: {
-                        screen: 'SearchResults'
+                        screen: 'SearchResults',
+                        params: {
+                            guests: adults + children
+                        }
                     }
                 })}
                 style = {{
