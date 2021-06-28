@@ -5,17 +5,18 @@ export const getPost = /* GraphQL */ `
   query GetPost($id: ID!) {
     getPost(id: $id) {
       id
-      image
-      type
-      title
-      description
-      bed
-      bedroom
-      maxGuests
-      oldPrice
-      newPrice
-      latitude
-      longitude
+      startingLocation
+      endingLocation
+      date
+      time
+      trunkCapacity
+      carType
+      carColour
+      PassengerCount
+      cost
+      sex
+      ageStart
+      ageEnd
       createdAt
       updatedAt
     }
@@ -30,17 +31,18 @@ export const listPosts = /* GraphQL */ `
     listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        image
-        type
-        title
-        description
-        bed
-        bedroom
-        maxGuests
-        oldPrice
-        newPrice
-        latitude
-        longitude
+        startingLocation
+        endingLocation
+        date
+        time
+        trunkCapacity
+        carType
+        carColour
+        PassengerCount
+        cost
+        sex
+        ageStart
+        ageEnd
         createdAt
         updatedAt
       }
