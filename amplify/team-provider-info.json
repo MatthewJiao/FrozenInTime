@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-foundation-dev-130512-unauthRole",
       "StackName": "amplify-foundation-dev-130512",
       "StackId": "arn:aws:cloudformation:us-east-2:377611900446:stack/amplify-foundation-dev-130512/aedbaef0-d1e9-11eb-b39f-06ab463d1800",
-      "AmplifyAppId": "d2lx33fmvj0zl4"
+      "AmplifyAppId": "d2lx33fmvj0zl4",
+      "AuthTriggerTemplateURL": ""
     },
     "categories": {
       "auth": {

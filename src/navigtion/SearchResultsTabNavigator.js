@@ -25,13 +25,14 @@ const SearchResultsTabNavigtor = (props) => {
                             and: {
                                 maxGuests: {
                                     ge: guests
-                                }, 
-                                latitude: {
-                                    between: [viewport.southwest.lat, viewport.northeast.lat], 
-                                },
-                                longitude: {
-                                    between: [viewport.southwest.lng, viewport.northeast.lng], 
                                 }
+                                // , 
+                                // latitude: {
+                                //     between: [viewport.southwest.lat, viewport.northeast.lat], 
+                                // },
+                                // longitude: {
+                                //     between: [viewport.southwest.lng, viewport.northeast.lng], 
+                                // }
 
                             }
                         }
